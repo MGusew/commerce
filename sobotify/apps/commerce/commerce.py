@@ -50,7 +50,7 @@ class commerce:
             "problemTerminate":"Leider scheint hier ein ernsthaftes Problem vorzuliegen. Ich beende.",
             "okay":["Alles klar","Okay","In Ordnung"],
             "size":"Größe",
-            "yes":["ja", "okay", "in ordnung"],
+            "yes":["ja", "okay", "in ordnung", "klingt gut"],
             "no":["nein","gar nichts", "nichts"],
             # first roleplay #
             "introduction_first_roleplay":"Du bist der Kunde und ich bin der Assistent. Lass uns anfangen. Du kommst in das Geschäft herein.",
@@ -894,7 +894,7 @@ class commerce:
                 self.speak("iThink",motion="iThink")
                 self.consult()
                 self.speak(self.random_sentence(self.text_scenario["understand"])+self.text_scenario["wantChoose-part1"]+Goal[2]+self.text_scenario["wantChoose-part2"],rawtext=True)
-        elif self.suggestion[2]==0:
+        elif len(self.suggestion[2])==0:
             if Goal[2]=="" or not self.search_array(Goal[2],TraitsArray[2]):
                 Goal[2]=self.random_sentence(TraitsArray[2])
             self.speak("hint_proceedNoMaterial",pause_emotion_detection=True)
@@ -937,7 +937,7 @@ class commerce:
     def try_on2(self):
         answer=self.listen()
         sentence=""
-        if not self.search_answer_or(["probieren","hole","Moment"],answer):
+        if not self.search_answer_or(["probieren","hole","Moment","gebe"],answer):
             self.speak("hint_tryOn",pause_emotion_detection=True)
             sentence=self.random_sentence(self.text_scenario["okay"])
         sentence+=self.text_scenario["instructionProceed"]
