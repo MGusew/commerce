@@ -2,48 +2,28 @@
 Commerce is an application for simulating a sales conversation with a robot acting in the role of a customer or salesperson. Commerce is published along with a slightly modified version of Sobotify. The user interface and grammar correction tool were adapted. The Sobotify version is derived from hhuebert (https://github.com/hhuebert/sobotify).
 
 ## Instructions for installation
-Prerequisite: The latest sobotify version is installed  
+Prerequisite: The latest sobotify version is installed
 For more information see also the intructions for Sobotify (https://github.com/hhuebert/sobotify)
-* download the commerce repository
-* replace your current sobotify installation folder with commerce
-* you might have to rename commerce->your_previous_folder_name
+* download the commerce repository here: https://github.com/MGusew/commerce/archive/refs/heads/main.zip
+* Unzip the commerce-main.zip file 
+* find your current sobotify installation folder (usually named "sobotify", NOT ".sobotify")
+* copy the contents of the commerce-main folder and replace the contents in your sobotify installation folder
+* it is important that the name of your sobotify installation folder stays the same 
+* copy the contents of the folder "projects" from commer-main and paste it to .sobotify\projects
 
+Open a command line which you can find by searching for "anaconda prompt" in Windows Search.
 Type the following into anaconda prompt:
 
     conda activate sobotify
     pip install wikipedia-api
-    
-In .sobotify folder (where all the user files are) add these folders:
-* .sobotify\projects\commerce
-* .sobotify\projects\commerce\trash
-* .sobotify\projects\quiz
-* .sobotify\projects\quiz\trash
-
-Do:
-* add to all other applications the same folder structure
-* copy commerce.xlsx (located in sobotify_extended\sobotify\apps\commerce) into folder .sobotify\projects\commerce
-* copy your xlsx files into the corresponding folders
 
 ## Instructions for use
-There are several different ways to start the Commerce:
-* click on start_app.bat and choose the commerce application. You can choose any project which shows up. Projects act as a dummy and do not affect Commerce yet
+There are several different ways to start the commerce app:
+* click on start_app.bat and choose the commerce app. You can choose any project which shows up. A Project acts as a dummy for commerce app. Changes in the project have no effect.
 * click on start_commmerce.bat
 * go with anaconda prompt to sobotify\apps\commerce
 
         conda activate sobotify
         python commerce.py
 
-Beware that commerce.xlsx is just a dummy and changes there do not affect the sales conversation
-
-## Manual changes since Jun 23 2023
-.sobotify folder order change:
-* .sobotify\projects\quiz (contains data for quiz app)
-* .sobotify\projects\commerce (contains data for commerce app)
-
-Changed sobotify files:
-* sobotify_app_gui.py
-* grammar_checking.py
-
-in sobotify env:     
-
-    pip install wikipedia-api
+Beware that commerce.xlsx is just a dummy and changes there do not affect the sales conversation. The scenario in Commerce app can be adapted in commerce.py. This can require some basic Python knowledge.
